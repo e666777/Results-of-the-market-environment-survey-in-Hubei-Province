@@ -378,8 +378,6 @@ dataCity <- data.frame(DATA$X1.您长期居住的城市,DATA$总得分)
 dataCity_mean <- aggregate(DATA$总得分, by=list(type=DATA$X1.您长期居住的城市),mean)
 City <- rename(dataCity_mean,c(type = "城市",x = "得分")) 
 write_excel_csv(City,"city_总分.csv")
-library(baidumap)
-options(baidumap.key="BDCzgqQnGu7mXgoi7A7M2KaIh1m6FF07")
 library(recharts)
 library(RColorBrewer)
 eMap(City, namevar =~ 城市, datavar = ~ 得分, region = "湖北",
